@@ -1,0 +1,11 @@
+services:
+  # Optional — only if you replace the in-memory retriever with Postgres later
+  db:
+    image: postgres:16-alpine
+    profiles: ["db"]
+    environment:
+      POSTGRES_USER: voice
+      POSTGRES_PASSWORD: voice
+      POSTGRES_DB: voice_agent
+    ports:
+      - "5432:5432"
